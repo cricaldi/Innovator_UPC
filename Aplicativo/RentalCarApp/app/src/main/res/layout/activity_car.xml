@@ -1,0 +1,130 @@
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_card"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    card_view:cardCornerRadius="4dp"
+    android:layout_margin="5dp"
+    android:clickable="false">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:id="@+id/internal_item_layout">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/pictureImageView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="57dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_toyota_yaris" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/backButton"
+            android:text="Regresar"
+            android:layout_alignTop="@+id/rentButton"
+            android:layout_alignEnd="@+id/totalPriceEditText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Costo x Hora:"
+            android:id="@+id/dateReturnTextView"
+            android:minWidth="100dp"
+            android:layout_below="@+id/modelTextView"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yaris"
+            android:id="@+id/modelTextView"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/trademarktextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toyota"
+            android:id="@+id/trademarktextView"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_below="@+id/pictureImageView"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/priceHoureditText"
+            android:minWidth="180dp"
+            android:layout_alignBottom="@+id/dateReturnTextView"
+            android:layout_toEndOf="@+id/dateReturnTextView"
+            android:editable="false"
+            android:layout_marginRight="30dp"
+            android:inputType="none" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alquilar"
+            android:id="@+id/rentButton"
+            android:layout_below="@+id/totalPriceTextView"
+            android:layout_alignStart="@+id/totalPriceTextView"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horas Alquiler:"
+            android:id="@+id/hoursRentTextView"
+            android:layout_below="@+id/dateReturnTextView"
+            android:layout_alignStart="@+id/dateReturnTextView"
+            android:layout_marginTop="20dp"
+            android:minWidth="100dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hoursRentEditText"
+            android:minWidth="180dp"
+            android:layout_alignBottom="@+id/hoursRentTextView"
+            android:layout_toEndOf="@+id/dateReturnTextView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Costo Total:"
+            android:id="@+id/totalPriceTextView"
+            android:layout_below="@+id/hoursRentTextView"
+            android:layout_alignStart="@+id/hoursRentTextView"
+            android:layout_marginTop="20dp"
+            android:minWidth="100dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/totalPriceEditText"
+            android:layout_alignBottom="@+id/totalPriceTextView"
+            android:layout_toEndOf="@+id/hoursRentTextView"
+            android:minWidth="180dp"
+            android:inputType="none" />
+
+        <!--android:src=""-->
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
