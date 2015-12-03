@@ -12,40 +12,56 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import pe.edu.upc.rentalcarapp.R;
 import pe.edu.upc.rentalcarapp.models.Car;
-import pe.edu.upc.rentalcarapp.activities.UserActivity;
-import pe.edu.upc.rentalcarapp.activities.CarActivity;
 import pe.edu.upc.rentalcarapp.models.CarAdapter;
 
 /**
  * Created by Aldo Pizarro on 03/12/2015.
  */
-public class UserActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+public class CarActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ArrayList<Car> cars;
-    private RecyclerView mCarsRecyclerView;
-    private RecyclerView.Adapter mCarsAdapter;
-    private RecyclerView.LayoutManager mCarsLayoutManager;
-
+    TextView nameTextView;
+    ImageView pictureImageView;
+    Button backButton;
+    TextView descriptionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_car);
 
-        cars = new ArrayList<>();
-        initializeData();
-        mCarsRecyclerView = (RecyclerView) findViewById(R.id.carsRecyclerView);
-        mCarsRecyclerView.setHasFixedSize(true);
-        mCarsLayoutManager = new LinearLayoutManager(this);
-        mCarsRecyclerView.setLayoutManager(mCarsLayoutManager);
-        mCarsAdapter = new CarAdapter(cars);
-        mCarsRecyclerView.setAdapter(mCarsAdapter);
+        try {
+
+            Bundle bundle = getIntent().getExtras();
+            System.out.println(bundle.getString("trademarkCar"));
+            System.out.println(bundle.getString("modelCar"));
+            System.out.println(bundle.getString("descriptionCar"));
+            System.out.println(bundle.getString("pictureUrlCar"));
+            nameTextView = (TextView) findViewById(R.id.nameTextView);
+            pictureImageView = (ImageView) findViewById(R.id.pictureImageView);
+            nameTextView.setText(bundle.getString("trademarkCar") + " " + bundle.getString("modelCar"));
+            descriptionTextView = (TextView) findViewById(R.id.descriptionTextView);
+            descriptionTextView.setText(bundle.getString("descriptionCar"));
+            pictureImageView.setImageResource(Integer.parseInt(bundle.getString("pictureUrlCar")));
+            backButton = (Button) findViewById(R.id.backButton);
+            backButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -117,17 +133,5 @@ public class UserActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void initializeData() {
-        cars = new ArrayList<>();
-        cars.add(new Car("Toyota", "Corolla", "2013", "Plomo",
-                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_001)));
-        cars.add(new Car("Nissan", "Centra", "2013", "Plomo",
-                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_002)));
-        cars.add(new Car("BMW", "Sedan", "2015", "Plomo",
-                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_003)));
-
-
     }
 }

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pe.edu.upc.rentalcarapp.R;
+import pe.edu.upc.rentalcarapp.activities.CarActivity;
 import pe.edu.upc.rentalcarapp.activities.UserActivity;
 
 //import com.xendacentral.darkcatalog.activities.ItemActivity;
@@ -30,11 +31,11 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
         ImageView pictureImageView;
-        CardView personCard;
+        CardView carCard;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            personCard = (CardView) itemView.findViewById(R.id.car_card);
+            carCard = (CardView) itemView.findViewById(R.id.car_card);
             nameTextView = (TextView) itemView.findViewById(R.id.nameTextView);
             pictureImageView = (ImageView) itemView.findViewById(R.id.pictureImageView);
         }
@@ -55,28 +56,32 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
                 cars.get(position).getModelCar());
         holder.pictureImageView.setImageResource(
                 Integer.parseInt(cars.get(position).getPictureUrlCar()));
-    }
-    /*@Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.nameTextView.setText(cars.get(position).getTrademarkCar() + " " +
-                cars.get(position).getModelCar());
-        holder.pictureImageView.setImageResource(
-                Integer.parseInt(cars.get(position).getPictureUrlCar()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.printf("Selected position: %d%n", position);
-                Intent itemIntent = new Intent(view.getContext(), CarsActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("firstName", cars.get(position).getTrademarkCar());
-                bundle.putString("lastName", cars.get(position).getModelCar());
-                bundle.putString("pictureUrl", cars.get(position).getPictureUrlCar());
-                bundle.putString("shortBio", cars.get(position).getDescriptionCar());
-                itemIntent.putExtras(bundle);
-                view.getContext().startActivity(itemIntent);
+                try {
+
+
+                    System.out.printf("Envio de valores: -- Selected position: %d%n", position);
+                    System.out.println(cars.get(position).getTrademarkCar());
+                    System.out.println(cars.get(position).getModelCar());
+                    System.out.println(cars.get(position).getPictureUrlCar());
+                    System.out.println(cars.get(position).getDescriptionCar());
+                    Intent itemIntent = new Intent(view.getContext(), CarActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("trademarkCar", cars.get(position).getTrademarkCar());
+                    bundle.putString("modelCar", cars.get(position).getModelCar());
+                    bundle.putString("pictureUrlCar", cars.get(position).getPictureUrlCar());
+                    bundle.putString("descriptionCar", cars.get(position).getDescriptionCar());
+                    System.out.println(bundle);
+                    itemIntent.putExtras(bundle);
+                    view.getContext().startActivity(itemIntent);
+                } catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
             }
         });
-    }*/
+    }
 
 
     @Override

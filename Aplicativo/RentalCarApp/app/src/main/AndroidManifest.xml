@@ -24,6 +24,11 @@
             android:name=".activities.SignInActivity"
             android:label="@string/title_activity_signon">
         </activity>
+        <activity
+            android:name=".activities.CarActivity"
+            android:label="@string/title_activity_car"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
