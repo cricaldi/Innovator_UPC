@@ -102,15 +102,15 @@ public class UserActivity extends AppCompatActivity
         if (id == R.id.nav_gallery) {
             finish();
             startActivity(new Intent(getBaseContext(), UserActivity.class));
-        } else if (id == R.id.nav_camara) {
+        } else if (id == R.id.nav_search) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_rents) {
 
-        } else if (id == R.id.nav_manage) {
+        } /*else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_logoff) {
+        } */else if (id == R.id.nav_logoff) {
             finish();
         }
 

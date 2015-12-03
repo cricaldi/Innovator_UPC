@@ -55,11 +55,20 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/backButton"
+            android:text="Reservar"
+            android:id="@+id/reservationButton"
+            android:layout_marginTop="70dp"
             android:layout_below="@+id/descriptionTextView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="61dp" />
+            android:layout_toStartOf="@+id/nameTextView"
+            android:contextClickable="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar"
+            android:id="@+id/backButton"
+            android:layout_alignTop="@+id/reservationButton"
+            android:layout_toEndOf="@+id/nameTextView" />
 
     </RelativeLayout>
 

@@ -7,8 +7,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,11 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import pe.edu.upc.rentalcarapp.R;
-import pe.edu.upc.rentalcarapp.models.Car;
-import pe.edu.upc.rentalcarapp.models.CarAdapter;
 
 /**
  * Created by Aldo Pizarro on 03/12/2015.
@@ -118,15 +112,15 @@ public class CarActivity extends AppCompatActivity
         if (id == R.id.nav_gallery) {
             finish();
             startActivity(new Intent(getBaseContext(), UserActivity.class));
-        } else if (id == R.id.nav_camara) {
+        } else if (id == R.id.nav_search) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_rents) {
 
-        } else if (id == R.id.nav_manage) {
+        } /*else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_logoff) {
+        } */else if (id == R.id.nav_logoff) {
             finish();
         }
 
