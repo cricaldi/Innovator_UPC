@@ -19,5 +19,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), UserActivity.class));
             }
         });
+        findViewById(R.id.registerButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), SignInActivity.class));
+            }
+        });
     }
 }

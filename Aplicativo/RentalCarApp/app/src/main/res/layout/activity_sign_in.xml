@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pe.edu.upc.rentalcarapp.activities.SignInActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo:"
+        android:id="@+id/mailTextView"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        android:minWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:id="@+id/pass1TextView"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/mailTextView"
+        android:layout_alignStart="@+id/mailTextView"
+        android:minWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repetir:"
+        android:id="@+id/pass2TextView"
+        android:layout_below="@+id/pass1TextView"
+        android:layout_alignStart="@+id/pass1TextView"
+        android:layout_marginTop="30dp"
+        android:minWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombres:"
+        android:id="@+id/nameTextView"
+        android:layout_below="@+id/pass2TextView"
+        android:layout_alignStart="@+id/pass2TextView"
+        android:layout_marginTop="30dp"
+        android:minWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellidos:"
+        android:id="@+id/lastNameTextView"
+        android:layout_below="@+id/nameTextView"
+        android:layout_alignStart="@+id/nameTextView"
+        android:layout_marginTop="30dp"
+        android:minWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nro Documento:"
+        android:id="@+id/numDocTextView"
+        android:layout_below="@+id/typeDocTextView"
+        android:layout_alignStart="@+id/typeDocTextView"
+        android:layout_marginTop="30dp"
+        android:maxWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo Documento:"
+        android:id="@+id/typeDocTextView"
+        android:maxWidth="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/lastNameTextView"
+        android:layout_alignStart="@+id/lastNameTextView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mailEditText"
+        android:layout_toEndOf="@+id/mailTextView"
+        android:layout_toRightOf="@+id/mailTextView"
+        android:layout_alignBottom="@+id/mailTextView"
+        android:minWidth="180dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameEditText"
+        android:minWidth="180dp"
+        android:layout_alignBottom="@+id/nameTextView"
+        android:layout_toEndOf="@+id/pass2TextView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastNameEditText"
+        android:minWidth="180dp"
+        android:password="false"
+        android:layout_alignBottom="@+id/lastNameTextView"
+        android:layout_toEndOf="@+id/nameTextView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numDocEditText"
+        android:layout_alignBottom="@+id/numDocTextView"
+        android:layout_toEndOf="@+id/typeDocTextView"
+        android:minWidth="180dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:id="@+id/saveButton"
+        android:layout_alignParentBottom="false"
+        android:layout_alignStart="@+id/numDocTextView"
+        android:layout_below="@+id/numDocTextView"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:id="@+id/cancelButton"
+        android:layout_alignTop="@+id/saveButton"
+        android:layout_alignEnd="@+id/numDocEditText" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/typeDocTextView"
+        android:layout_alignEnd="@+id/numDocEditText"
+        android:layout_toEndOf="@+id/typeDocTextView"
+        android:baselineAligned="false"
+        android:hapticFeedbackEnabled="false"
+        android:orientation="horizontal"
+        android:layout_above="@+id/numDocTextView">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RUC"
+            android:id="@+id/rucRadioButton2"
+            android:layout_toEndOf="@+id/dniRadioButton"
+            android:layout_alignBottom="@+id/typeDocTextView"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI"
+            android:id="@+id/dniRadioButton"
+            android:layout_toEndOf="@+id/typeDocTextView"
+            android:layout_alignBottom="@+id/typeDocTextView"
+            android:filterTouchesWhenObscured="false"
+            android:fitsSystemWindows="false" />
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pass1EditText"
+        android:password="true"
+        android:minWidth="180dp"
+        android:layout_alignBottom="@+id/pass1TextView"
+        android:layout_toEndOf="@+id/mailTextView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pass2EditText"
+        android:password="true"
+        android:minWidth="180dp"
+        android:layout_alignBottom="@+id/pass2TextView"
+        android:layout_toEndOf="@+id/pass1TextView" />
+
+</RelativeLayout>
