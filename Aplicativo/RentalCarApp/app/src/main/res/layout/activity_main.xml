@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginImageView"
+        android:layout_marginTop="50dp"
+        android:minHeight="100dp"
+        android:minWidth="100dp"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario:"
+        android:id="@+id/userTextView"
+        android:layout_gravity="center"
+        android:layout_alignStart="@+id/passTextView"
+        android:layout_marginTop="250dp"
+        android:layout_alignEnd="@+id/passTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:id="@+id/passTextView"
+        android:layout_marginTop="300dp"
+        android:layout_toLeftOf="@+id/passEditText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userEditText"
+        android:layout_alignBottom="@+id/userTextView"
+        android:layout_alignStart="@+id/loginImageView"
+        android:minWidth="150dp"
+        android:layout_alignEnd="@+id/registerButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passEditText"
+        android:layout_alignBottom="@+id/passTextView"
+        android:layout_alignStart="@+id/userEditText"
+        android:layout_alignEnd="@+id/userEditText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:id="@+id/registerButton"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="190dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        android:id="@+id/loginButton"
+        android:layout_alignTop="@+id/registerButton"
+        android:layout_alignStart="@+id/passTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="RentalCar"
+        android:id="@+id/loginTextView"
+        android:layout_below="@+id/loginImageView"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recuerdame"
+        android:id="@+id/rememberCheckBox"
+        android:layout_below="@+id/passTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:checked="false" />
+
+</RelativeLayout>
