@@ -14,4 +14,7 @@
     <string name="action_example">Example action</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="app_key">Z9p161hcGN5eesgTJgQ4OKY48JXBW8QrDj32SalM</string>
+    <string name="client_key">e6rTt2PPe1915XOnKYvq4BHTSveGYgmnARF8uZ9q</string>
 </resources>
