@@ -7,64 +7,42 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import pe.edu.upc.rentalcarapp.R;
 
-/**
- * Created by Aldo Pizarro on 03/12/2015.
- */
-public class CarActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
-    TextView descriptionTextView;
-    TextView pricePerHourTextView;
-    TextView brandTextView;
-    TextView modelTextView;
-
-
-    //TextView nameTextView;
-    //ImageView pictureImageView;
-    Button backButton;
-    //TextView descriptionTextView;
+public class SearchCarActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_car);
-
-        try {
-            Bundle bundle = getIntent().getExtras();
-            descriptionTextView = (TextView)findViewById(R.id.descriptionTextView);
-            pricePerHourTextView = (TextView)findViewById(R.id.pricePerHourTextView);
-            brandTextView = (TextView)findViewById(R.id.brandTextView);
-            modelTextView = (TextView)findViewById(R.id.modelTextView);
-
-            descriptionTextView.setText(bundle.getString("description"));
-            pricePerHourTextView.setText(bundle.getString("priceperhour"));
-            brandTextView.setText(bundle.getString("brand"));
-            modelTextView.setText(bundle.getString("model"));
-
-            //pictureImageView.setImageResource(Integer.parseInt(bundle.getString("pictureUrlCar")));
-            backButton = (Button) findViewById(R.id.backButton);
-            backButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        setContentView(R.layout.activity_search_car);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        findViewById(R.id.searchButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getBaseContext(), UserActivity.class));
+            }
+        });
+
+        findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+
+            }
+        });
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

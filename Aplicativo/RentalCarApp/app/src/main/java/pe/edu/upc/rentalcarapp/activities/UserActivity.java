@@ -109,7 +109,7 @@ public class UserActivity extends AppCompatActivity
             finish();
             startActivity(new Intent(getBaseContext(), UserActivity.class));
         } else if (id == R.id.nav_search) {
-
+            startActivity(new Intent(getBaseContext(), SearchCarActivity.class));
         } else if (id == R.id.nav_rents) {
 
         } /*else if (id == R.id.nav_manage) {
