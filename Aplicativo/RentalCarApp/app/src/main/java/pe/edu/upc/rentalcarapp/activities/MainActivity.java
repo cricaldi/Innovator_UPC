@@ -75,15 +75,15 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                          user.getIdRole().fetchIfNeededInBackground(new GetCallback<Role>() {
-                            @Override
-                            public void done(Role role, ParseException e) {
-                                if(role.getName().equals("Client")) {
-                                    startActivity(new Intent(getBaseContext(), UserActivity.class));
-                                }else if(role.getName().equals("Administrator")){
-                                    //startActivity(new Intent(getBaseContext(), .class));
-                                }
+                             @Override
+                             public void done(Role role, ParseException e) {
+                                 if (role.getName().equals("Client")) {
+                                     startActivity(new Intent(getBaseContext(), UserActivity.class));
+                                 } else if (role.getName().equals("Administrator")) {
+                                     //startActivity(new Intent(getBaseContext(), .class));
+                                 }
 
-                            }
+                             }
                          });
                     }
                 });
