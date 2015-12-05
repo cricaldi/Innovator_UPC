@@ -4,6 +4,7 @@
     <string name="title_activity_signon">Registro de Usuarios</string>
     <string name="title_activity_car">Detalle del Vehiculo</string>
     <string name="title_activity_search_car">Search Cars</string>
+    <string name="title_activity_rent">My Rents</string>
 
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>

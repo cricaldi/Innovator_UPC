@@ -33,9 +33,16 @@
             android:label="@string/title_activity_car"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".activities.SearchCarActivity"
+        <activity
+            android:name=".activities.SearchCarActivity"
             android:label="@string/title_activity_search_car"
-            android:theme="@style/AppTheme.NoActionBar" >>
+            android:theme="@style/AppTheme.NoActionBar" >
+>
+        </activity>
+        <activity
+            android:name=".activities.RentActivity"
+            android:label="@string/title_activity_rent"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 
