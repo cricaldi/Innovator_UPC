@@ -30,7 +30,7 @@
             android:text="Search"
             android:id="@+id/searchButton"
             android:layout_alignTop="@+id/backButton"
-            android:layout_alignStart="@+id/modelTextView" />
+            android:layout_alignStart="@+id/totalTextView" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -46,25 +46,26 @@
             android:layout_height="wrap_content"
             android:id="@+id/modelEditText"
             android:minWidth="180dp"
-            android:layout_alignBottom="@+id/modelTextView"
-            android:layout_toEndOf="@+id/modelTextView" />
+            android:layout_alignBottom="@+id/totalTextView"
+            android:layout_toEndOf="@+id/totalTextView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Marca:"
+            android:text="Trademark:"
             android:id="@+id/trademarkTextView"
             android:layout_alignParentTop="false"
             android:layout_alignParentStart="false"
             android:layout_marginTop="100dp"
             android:layout_marginLeft="40dp"
-            android:minWidth="80dp" />
+            android:minWidth="80dp"
+            android:autoText="false" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modelo:"
-            android:id="@+id/modelTextView"
+            android:text="Model:"
+            android:id="@+id/totalTextView"
             android:layout_marginTop="30dp"
             android:layout_below="@+id/trademarkTextView"
             android:layout_alignStart="@+id/trademarkTextView"

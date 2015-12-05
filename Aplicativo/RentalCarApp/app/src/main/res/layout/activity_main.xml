@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Usuario:"
+        android:text="Login:"
         android:id="@+id/userTextView"
         android:layout_gravity="center"
         android:layout_alignStart="@+id/passTextView"
@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contraseña:"
+        android:text="Password:"
         android:id="@+id/passTextView"
         android:layout_marginTop="300dp"
         android:layout_toLeftOf="@+id/passEditText" />
@@ -60,7 +60,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrarse"
+        android:text="Sing In"
         android:id="@+id/registerButton"
         android:layout_alignParentBottom="false"
         android:layout_marginTop="400dp"
@@ -69,7 +69,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingresar"
+        android:text="Sing On"
         android:id="@+id/loginButton"
         android:layout_alignTop="@+id/registerButton"
         android:layout_alignStart="@+id/passTextView" />

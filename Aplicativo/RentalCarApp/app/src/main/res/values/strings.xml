@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">RentalCarApp</string>
-    <string name="title_activity_user">Autos Disponibles</string>
-    <string name="title_activity_signon">Registro de Usuarios</string>
-    <string name="title_activity_car">Detalle del Vehiculo</string>
+    <string name="title_activity_user">Available Cars</string>
+    <string name="title_activity_signon">User Registration</string>
+    <string name="title_activity_car">Car Details</string>
     <string name="title_activity_search_car">Search Cars</string>
     <string name="title_activity_rent">My Rents</string>
 

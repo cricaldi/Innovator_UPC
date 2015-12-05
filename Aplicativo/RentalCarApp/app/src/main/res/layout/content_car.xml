@@ -55,7 +55,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reservar"
+            android:text="Reserve"
             android:id="@+id/reservationButton"
             android:layout_marginTop="70dp"
             android:layout_below="@+id/descriptionTextView"
@@ -65,7 +65,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Regresar"
+            android:text="Back"
             android:id="@+id/backButton"
             android:layout_alignTop="@+id/reservationButton"
             android:layout_toEndOf="@+id/nameTextView" />

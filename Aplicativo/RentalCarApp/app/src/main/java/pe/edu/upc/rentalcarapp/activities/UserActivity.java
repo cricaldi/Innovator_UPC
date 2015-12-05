@@ -10,23 +10,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pe.edu.upc.bean.Car;
-import pe.edu.upc.bean.parse.BrandObject;
 import pe.edu.upc.bean.parse.CarObject;
-import pe.edu.upc.bean.parse.ModelObject;
 import pe.edu.upc.rentalcarapp.R;
-import pe.edu.upc.rentalcarapp.activities.UserActivity;
-import pe.edu.upc.rentalcarapp.activities.CarActivity;
 import pe.edu.upc.rentalcarapp.models.CarAdapter;
 
 /**

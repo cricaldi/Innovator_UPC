@@ -1,6 +1,5 @@
 package pe.edu.upc.rentalcarapp.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -17,10 +16,8 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 
 import pe.edu.upc.rentalcarapp.R;
-import pe.edu.upc.rentalcarapp.models.Car;
-import pe.edu.upc.rentalcarapp.models.CarAdapter;
 import pe.edu.upc.rentalcarapp.models.Rent;
-import pe.edu.upc.rentalcarapp.models.RentAdapter;
+import pe.edu.upc.rentalcarapp.models.RentalAdapter;
 
 public class RentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
@@ -42,7 +39,7 @@ public class RentActivity extends AppCompatActivity
         mRentsRecyclerView.setHasFixedSize(true);
         mRentsLayoutManager = new LinearLayoutManager(this);
         mRentsRecyclerView.setLayoutManager(mRentsLayoutManager);
-        mRentsAdapter = new RentAdapter(rents);
+        mRentsAdapter = new RentalAdapter(rents);
         mRentsRecyclerView.setAdapter(mRentsAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

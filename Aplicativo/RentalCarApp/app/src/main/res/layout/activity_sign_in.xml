@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correo:"
+        android:text="Email:"
         android:id="@+id/mailTextView"
         android:layout_alignParentTop="false"
         android:layout_alignParentStart="false"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contraseña:"
+        android:text="Password:"
         android:id="@+id/pass1TextView"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/mailTextView"
@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Repetir:"
+        android:text="Repeat:"
         android:id="@+id/pass2TextView"
         android:layout_below="@+id/pass1TextView"
         android:layout_alignStart="@+id/pass1TextView"
@@ -41,7 +41,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombres:"
+        android:text="Name:"
         android:id="@+id/nameTextView"
         android:layout_below="@+id/pass2TextView"
         android:layout_alignStart="@+id/pass2TextView"
@@ -51,7 +51,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Apellidos:"
+        android:text="Surname:"
         android:id="@+id/lastNameTextView"
         android:layout_below="@+id/nameTextView"
         android:layout_alignStart="@+id/nameTextView"
@@ -61,7 +61,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nro Documento:"
+        android:text="Document Number:"
         android:id="@+id/numDocTextView"
         android:layout_below="@+id/typeDocTextView"
         android:layout_alignStart="@+id/typeDocTextView"
@@ -71,7 +71,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tipo Documento:"
+        android:text="Document Type:"
         android:id="@+id/typeDocTextView"
         android:maxWidth="80dp"
         android:layout_marginTop="30dp"
@@ -115,7 +115,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"
+        android:text="Register"
         android:id="@+id/saveButton"
         android:layout_alignParentBottom="false"
         android:layout_alignStart="@+id/numDocTextView"
@@ -125,7 +125,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="Back"
         android:id="@+id/cancelButton"
         android:layout_alignTop="@+id/saveButton"
         android:layout_alignEnd="@+id/numDocEditText" />
