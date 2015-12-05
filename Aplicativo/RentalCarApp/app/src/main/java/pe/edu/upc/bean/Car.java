@@ -9,7 +9,7 @@ public class Car {
     private String description;
     private String brand;
     private String model;
-    //String image;
+    private String urlImg;
 
     public String getObjectId() {
         return objectId;
@@ -49,5 +49,13 @@ public class Car {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public String getUrlImg() {
+        return urlImg;
+    }
+
+    public void setUrlImg(String urlImg) {
+        this.urlImg = urlImg;
     }
 }

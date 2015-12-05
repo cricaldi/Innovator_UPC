@@ -139,6 +139,7 @@ public class UserActivity extends AppCompatActivity
                 car.setPricePerHour(c.getPrice());
                 car.setBrand(c.getIdBrand().getName());
                 car.setModel(c.getIdModel().getName());
+                car.setUrlImg(c.getFile().getUrl());
                 cars.add(car);
             }
 

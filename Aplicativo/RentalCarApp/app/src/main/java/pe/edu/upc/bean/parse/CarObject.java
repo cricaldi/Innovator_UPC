@@ -1,6 +1,7 @@
 package pe.edu.upc.bean.parse;
 
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 /**
@@ -8,6 +9,14 @@ import com.parse.ParseObject;
  */
 @ParseClassName("Car")
 public class CarObject extends ParseObject{
+
+    public ParseFile getFile() {
+        return getParseFile("Image");
+    }
+
+    public void setFile(ParseFile file) {
+        put("Image", file);
+    }
 
     public Double getPrice() {
         return getDouble("Price");
