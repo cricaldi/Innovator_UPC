@@ -19,7 +19,7 @@ import pe.edu.upc.rentalcarapp.R;
 import pe.edu.upc.rentalcarapp.models.Rent;
 import pe.edu.upc.rentalcarapp.models.RentalAdapter;
 
-public class RentActivity extends AppCompatActivity
+public class RentActivity {/*extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
     private ArrayList<Rent> rents;
@@ -106,7 +106,7 @@ public class RentActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } */else if (id == R.id.nav_logoff) {
+        } else if (id == R.id.nav_logoff) {
             finish();
         }
 
@@ -125,5 +125,5 @@ public class RentActivity extends AppCompatActivity
                 "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_003),"Devuelto"));
 
 
-    }
+    }*/
 }

@@ -3,17 +3,17 @@
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_gallery" android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Autos Disponibles" />
+            android:title="Available Cars" />
         <item android:id="@+id/nav_search" android:icon="@android:drawable/ic_menu_search"
-            android:title="Buscar Autos" />
+            android:title="Search Cars" />
         <item android:id="@+id/nav_rents" android:icon="@android:drawable/ic_menu_agenda"
-            android:title="Mis Alquileres" />
+            android:title="My Rents" />
         <!--item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_manage"
             android:title="Tools" />
         <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
             android:title="Share" /-->
         <item android:id="@+id/nav_logoff" android:icon="@android:drawable/ic_lock_power_off"
-            android:title="Salir" />
+            android:title="Exit" />
     </group>
 
 </menu>
