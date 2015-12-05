@@ -10,51 +10,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import pe.edu.upc.bean.Car;
-import pe.edu.upc.bean.parse.BrandObject;
-import pe.edu.upc.bean.parse.CarObject;
-import pe.edu.upc.bean.parse.ModelObject;
 import pe.edu.upc.rentalcarapp.R;
-import pe.edu.upc.rentalcarapp.activities.UserActivity;
-import pe.edu.upc.rentalcarapp.activities.CarActivity;
-import pe.edu.upc.rentalcarapp.models.CarAdapter;
 
-/**
- * Created by Aldo Pizarro on 03/12/2015.
- */
-public class UserActivity extends AppCompatActivity
+public class SearchCarActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
-
-    private ArrayList<Car> cars;
-    private RecyclerView mCarsRecyclerView;
-    private RecyclerView.Adapter mCarsAdapter;
-    private RecyclerView.LayoutManager mCarsLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
-
-        initializeCars();
-        mCarsRecyclerView = (RecyclerView) findViewById(R.id.carsRecyclerView);
-        mCarsRecyclerView.setHasFixedSize(true);
-        mCarsLayoutManager = new LinearLayoutManager(this);
-        mCarsRecyclerView.setLayoutManager(mCarsLayoutManager);
-        mCarsAdapter = new CarAdapter(cars);
-        mCarsRecyclerView.setAdapter(mCarsAdapter);
+        setContentView(R.layout.activity_search_car);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        findViewById(R.id.searchButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getBaseContext(), UserActivity.class));
+            }
+        });
+
+        findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+
+            }
+        });
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -111,8 +99,7 @@ public class UserActivity extends AppCompatActivity
         } else if (id == R.id.nav_search) {
             startActivity(new Intent(getBaseContext(), SearchCarActivity.class));
         } else if (id == R.id.nav_rents) {
-            finish();
-            startActivity(new Intent(getBaseContext(), RentActivity.class));
+
         } /*else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -124,28 +111,5 @@ public class UserActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void initializeCars() {
-        cars = new ArrayList<Car>();
-        ParseQuery<CarObject> carQuery = ParseQuery.getQuery("Car");
-        try {
-            List<CarObject> objects = carQuery.find();
-
-            Car car = null;
-            for (CarObject c : objects) {
-                car = new Car();
-                car.setDescription(c.getDescription());
-                car.setObjectId(c.getObjectId());
-                car.setPricePerHour(c.getPrice());
-                car.setBrand(c.getIdBrand().getName());
-                car.setModel(c.getIdModel().getName());
-                car.setUrlImg(c.getFile().getUrl());
-                cars.add(car);
-            }
-
-        }catch (Exception e1){
-
-        }
     }
 }

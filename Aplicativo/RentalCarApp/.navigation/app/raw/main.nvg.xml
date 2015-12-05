@@ -6,6 +6,22 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "pe.edu.upc.rentalcarapp.activities.UserActivity"/>
+      <point      
+        x = "476"      
+        y = "1308"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "pe.edu.upc.rentalcarapp.activities.CarActivity"/>
+      <point      
+        x = "550"      
+        y = "1530"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "pe.edu.upc.rentalcarapp.activities.MainActivity"/>
       <point      
         x = "1808"      
@@ -18,6 +34,22 @@
       <point      
         x = "476"      
         y = "344"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "pe.edu.upc.rentalcarapp.activities.SearchCarActivity"/>
+      <point      
+        x = "600"      
+        y = "1580"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "pe.edu.upc.rentalcarapp.activities.SignInActivity"/>
+      <point      
+        x = "1768"      
+        y = "100"/>
     </statePointEntry>
   </locations>
 </navigationModel>

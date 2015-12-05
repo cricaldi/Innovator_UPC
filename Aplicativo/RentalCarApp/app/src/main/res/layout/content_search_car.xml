@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        tools:context="pe.edu.upc.rentalcarapp.activities.SignInActivity"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/backButton"
+            android:layout_below="@+id/modelEditText"
+            android:layout_alignEnd="@+id/modelEditText"
+            android:layout_marginTop="50dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/searchButton"
+            android:layout_alignTop="@+id/backButton"
+            android:layout_alignStart="@+id/modelTextView" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trademarkEditText"
+            android:layout_toEndOf="@+id/trademarkTextView"
+            android:layout_toRightOf="@+id/trademarkTextView"
+            android:layout_alignBottom="@+id/trademarkTextView"
+            android:minWidth="180dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/modelEditText"
+            android:minWidth="180dp"
+            android:layout_alignBottom="@+id/modelTextView"
+            android:layout_toEndOf="@+id/modelTextView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marca:"
+            android:id="@+id/trademarkTextView"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="40dp"
+            android:minWidth="80dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modelo:"
+            android:id="@+id/modelTextView"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/trademarkTextView"
+            android:layout_alignStart="@+id/trademarkTextView"
+            android:minWidth="80dp" />
+
+    </RelativeLayout>
+</LinearLayout>

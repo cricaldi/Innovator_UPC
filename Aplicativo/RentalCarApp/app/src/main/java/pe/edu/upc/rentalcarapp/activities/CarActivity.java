@@ -119,9 +119,10 @@ public class CarActivity extends AppCompatActivity
             finish();
             startActivity(new Intent(getBaseContext(), UserActivity.class));
         } else if (id == R.id.nav_search) {
-
+            startActivity(new Intent(getBaseContext(), SearchCarActivity.class));
         } else if (id == R.id.nav_rents) {
-
+            finish();
+            startActivity(new Intent(getBaseContext(), RentActivity.class));
         } /*else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

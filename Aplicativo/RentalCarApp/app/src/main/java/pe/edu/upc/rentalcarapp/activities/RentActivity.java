@@ -1,5 +1,6 @@
 package pe.edu.upc.rentalcarapp.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,48 +11,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-
 import java.util.ArrayList;
-import java.util.List;
 
-import pe.edu.upc.bean.Car;
-import pe.edu.upc.bean.parse.BrandObject;
-import pe.edu.upc.bean.parse.CarObject;
-import pe.edu.upc.bean.parse.ModelObject;
 import pe.edu.upc.rentalcarapp.R;
-import pe.edu.upc.rentalcarapp.activities.UserActivity;
-import pe.edu.upc.rentalcarapp.activities.CarActivity;
+import pe.edu.upc.rentalcarapp.models.Car;
 import pe.edu.upc.rentalcarapp.models.CarAdapter;
 
-/**
- * Created by Aldo Pizarro on 03/12/2015.
- */
-public class UserActivity extends AppCompatActivity
+public class RentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
     private ArrayList<Car> cars;
-    private RecyclerView mCarsRecyclerView;
-    private RecyclerView.Adapter mCarsAdapter;
-    private RecyclerView.LayoutManager mCarsLayoutManager;
+    private RecyclerView mRentsRecyclerView;
+    private RecyclerView.Adapter mRentsAdapter;
+    private RecyclerView.LayoutManager mRentsLayoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_rent);
 
-        initializeCars();
-        mCarsRecyclerView = (RecyclerView) findViewById(R.id.carsRecyclerView);
-        mCarsRecyclerView.setHasFixedSize(true);
-        mCarsLayoutManager = new LinearLayoutManager(this);
-        mCarsRecyclerView.setLayoutManager(mCarsLayoutManager);
-        mCarsAdapter = new CarAdapter(cars);
-        mCarsRecyclerView.setAdapter(mCarsAdapter);
+        cars = new ArrayList<>();
+        initializeData();
+        mRentsRecyclerView = (RecyclerView) findViewById(R.id.rentsRecyclerView);
+        mRentsRecyclerView.setHasFixedSize(true);
+        mRentsLayoutManager = new LinearLayoutManager(this);
+        mRentsRecyclerView.setLayoutManager(mRentsLayoutManager);
+        mRentsAdapter = new CarAdapter(cars);
+        mRentsRecyclerView.setAdapter(mRentsAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -126,26 +116,15 @@ public class UserActivity extends AppCompatActivity
         return true;
     }
 
-    public void initializeCars() {
-        cars = new ArrayList<Car>();
-        ParseQuery<CarObject> carQuery = ParseQuery.getQuery("Car");
-        try {
-            List<CarObject> objects = carQuery.find();
+    public void initializeData() {
+        cars = new ArrayList<>();
+        cars.add(new Car("Toyota", "Corolla", "2013", "Plomo",
+                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_001)));
+        cars.add(new Car("Nissan", "Centra", "2013", "Plomo",
+                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_002)));
+        cars.add(new Car("BMW", "Sedan", "2015", "Plomo",
+                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_003)));
 
-            Car car = null;
-            for (CarObject c : objects) {
-                car = new Car();
-                car.setDescription(c.getDescription());
-                car.setObjectId(c.getObjectId());
-                car.setPricePerHour(c.getPrice());
-                car.setBrand(c.getIdBrand().getName());
-                car.setModel(c.getIdModel().getName());
-                car.setUrlImg(c.getFile().getUrl());
-                cars.add(car);
-            }
 
-        }catch (Exception e1){
-
-        }
     }
 }
