@@ -23,10 +23,16 @@ import pe.edu.upc.rentalcarapp.R;
 public class CarActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    TextView nameTextView;
-    ImageView pictureImageView;
-    Button backButton;
     TextView descriptionTextView;
+    TextView pricePerHourTextView;
+    TextView brandTextView;
+    TextView modelTextView;
+
+
+    //TextView nameTextView;
+    //ImageView pictureImageView;
+    Button backButton;
+    //TextView descriptionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +40,18 @@ public class CarActivity extends AppCompatActivity
         setContentView(R.layout.activity_car);
 
         try {
-
             Bundle bundle = getIntent().getExtras();
-            System.out.println(bundle.getString("trademarkCar"));
-            System.out.println(bundle.getString("modelCar"));
-            System.out.println(bundle.getString("descriptionCar"));
-            System.out.println(bundle.getString("pictureUrlCar"));
-            nameTextView = (TextView) findViewById(R.id.nameTextView);
-            pictureImageView = (ImageView) findViewById(R.id.pictureImageView);
-            nameTextView.setText(bundle.getString("trademarkCar") + " " + bundle.getString("modelCar"));
-            descriptionTextView = (TextView) findViewById(R.id.descriptionTextView);
-            descriptionTextView.setText(bundle.getString("descriptionCar"));
-            pictureImageView.setImageResource(Integer.parseInt(bundle.getString("pictureUrlCar")));
+            descriptionTextView = (TextView)findViewById(R.id.descriptionTextView);
+            pricePerHourTextView = (TextView)findViewById(R.id.pricePerHourTextView);
+            brandTextView = (TextView)findViewById(R.id.brandTextView);
+            modelTextView = (TextView)findViewById(R.id.modelTextView);
+
+            descriptionTextView.setText(bundle.getString("description"));
+            pricePerHourTextView.setText(bundle.getString("priceperhour"));
+            brandTextView.setText(bundle.getString("brand"));
+            modelTextView.setText(bundle.getString("model"));
+
+            //pictureImageView.setImageResource(Integer.parseInt(bundle.getString("pictureUrlCar")));
             backButton = (Button) findViewById(R.id.backButton);
             backButton.setOnClickListener(new View.OnClickListener() {
                 @Override

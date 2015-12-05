@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import pe.edu.upc.bean.*;
+import pe.edu.upc.bean.Car;
 import pe.edu.upc.rentalcarapp.R;
 import pe.edu.upc.rentalcarapp.activities.CarActivity;
 import pe.edu.upc.rentalcarapp.activities.UserActivity;
@@ -17,27 +20,35 @@ import pe.edu.upc.rentalcarapp.activities.UserActivity;
 //import com.xendacentral.darkcatalog.activities.ItemActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Aldo Pizarro on 03/12/2015.
  */
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
-    private ArrayList<Car> cars;
+    private List<pe.edu.upc.bean.Car> cars;
 
-    public CarAdapter(ArrayList<Car> cars) {
+    public CarAdapter(List<pe.edu.upc.bean.Car> cars) {
         this.cars = cars;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView;
-        ImageView pictureImageView;
         CardView carCard;
+        TextView descriptionTextView;
+        TextView pricePerHourTextView;
+        TextView brandTextView;
+        TextView modelTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             carCard = (CardView) itemView.findViewById(R.id.car_card);
-            nameTextView = (TextView) itemView.findViewById(R.id.nameTextView);
-            pictureImageView = (ImageView) itemView.findViewById(R.id.pictureImageView);
+            descriptionTextView = (TextView)itemView.findViewById(R.id.descriptionTextView);
+            pricePerHourTextView = (TextView)itemView.findViewById(R.id.pricePerHourTextView);
+            brandTextView = (TextView)itemView.findViewById(R.id.brandTextView);
+            modelTextView = (TextView)itemView.findViewById(R.id.modelTextView);
+            //carCard = (CardView) itemView.findViewById(R.id.car_card);
+            //nameTextView = (TextView) itemView.findViewById(R.id.nameTextView);
+            //pictureImageView = (ImageView) itemView.findViewById(R.id.pictureImageView);
         }
 
     }
@@ -50,29 +61,34 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
 
     }
 
+
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.nameTextView.setText(cars.get(position).getTrademarkCar() + " " +
-                cars.get(position).getModelCar());
-        holder.pictureImageView.setImageResource(
-                Integer.parseInt(cars.get(position).getPictureUrlCar()));
+        holder.descriptionTextView.setText(cars.get(position).getDescription());
+        holder.pricePerHourTextView.setText(cars.get(position).getPricePerHour() + "");
+        holder.brandTextView.setText(cars.get(position).getBrand());
+        holder.modelTextView.setText(cars.get(position).getModel());
+
+        //holder.nameTextView.setText(cars.get(position).getTrademarkCar() + " " +  cars.get(position).getModelCar());
+        //holder.pictureImageView.setImageResource(Integer.parseInt(cars.get(position).getPictureUrlCar()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-
-
                     System.out.printf("Envio de valores: -- Selected position: %d%n", position);
-                    System.out.println(cars.get(position).getTrademarkCar());
-                    System.out.println(cars.get(position).getModelCar());
-                    System.out.println(cars.get(position).getPictureUrlCar());
-                    System.out.println(cars.get(position).getDescriptionCar());
+                    System.out.println(cars.get(position).getDescription());
+                    System.out.println(cars.get(position).getPricePerHour());
+                    System.out.println(cars.get(position).getBrand());
+                    System.out.println(cars.get(position).getModel());
+                    System.out.println(cars.get(position).getObjectId());
+
                     Intent itemIntent = new Intent(view.getContext(), CarActivity.class);
                     Bundle bundle = new Bundle();
-                    bundle.putString("trademarkCar", cars.get(position).getTrademarkCar());
-                    bundle.putString("modelCar", cars.get(position).getModelCar());
-                    bundle.putString("pictureUrlCar", cars.get(position).getPictureUrlCar());
-                    bundle.putString("descriptionCar", cars.get(position).getDescriptionCar());
+                    bundle.putString("description", cars.get(position).getDescription());
+                    bundle.putDouble("priceperhour", cars.get(position).getPricePerHour());
+                    bundle.putString("brand", cars.get(position).getBrand());
+                    bundle.putString("model", cars.get(position).getModel());
+                    bundle.putString("objectid", cars.get(position).getObjectId());
                     System.out.println(bundle);
                     itemIntent.putExtras(bundle);
                     view.getContext().startActivity(itemIntent);
@@ -82,7 +98,6 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
             }
         });
     }
-
 
     @Override
     public int getItemCount() {
