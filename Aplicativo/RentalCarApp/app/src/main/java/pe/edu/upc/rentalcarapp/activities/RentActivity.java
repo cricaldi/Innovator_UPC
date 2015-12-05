@@ -19,11 +19,13 @@ import java.util.ArrayList;
 import pe.edu.upc.rentalcarapp.R;
 import pe.edu.upc.rentalcarapp.models.Car;
 import pe.edu.upc.rentalcarapp.models.CarAdapter;
+import pe.edu.upc.rentalcarapp.models.Rent;
+import pe.edu.upc.rentalcarapp.models.RentAdapter;
 
 public class RentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
-    private ArrayList<Car> cars;
+    private ArrayList<Rent> rents;
     private RecyclerView mRentsRecyclerView;
     private RecyclerView.Adapter mRentsAdapter;
     private RecyclerView.LayoutManager mRentsLayoutManager;
@@ -34,13 +36,13 @@ public class RentActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent);
 
-        cars = new ArrayList<>();
+        rents = new ArrayList<>();
         initializeData();
         mRentsRecyclerView = (RecyclerView) findViewById(R.id.rentsRecyclerView);
         mRentsRecyclerView.setHasFixedSize(true);
         mRentsLayoutManager = new LinearLayoutManager(this);
         mRentsRecyclerView.setLayoutManager(mRentsLayoutManager);
-        mRentsAdapter = new CarAdapter(cars);
+        mRentsAdapter = new RentAdapter(rents);
         mRentsRecyclerView.setAdapter(mRentsAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -117,13 +119,13 @@ public class RentActivity extends AppCompatActivity
     }
 
     public void initializeData() {
-        cars = new ArrayList<>();
-        cars.add(new Car("Toyota", "Corolla", "2013", "Plomo",
-                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_001)));
-        cars.add(new Car("Nissan", "Centra", "2013", "Plomo",
-                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_002)));
-        cars.add(new Car("BMW", "Sedan", "2015", "Plomo",
-                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_003)));
+        rents = new ArrayList<>();
+        rents.add(new Rent("Toyota", "Corolla", "2013", "Plomo",
+                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_001),"Pendiente"));
+        rents.add(new Rent("Nissan", "Centra", "2013", "Plomo",
+                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_002),"Devuelto"));
+        rents.add(new Rent("BMW", "Sedan", "2015", "Plomo",
+                "Carro en estreno, solo 2 usos", Integer.toString(R.mipmap.ic_car_003),"Devuelto"));
 
 
     }
